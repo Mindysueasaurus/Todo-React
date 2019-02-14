@@ -15,6 +15,7 @@
   border: 3px solid lightgray;
   border-radius: 15px; 
 }
+
 h1 {
   text-align: center;
   color: white;
@@ -55,4 +56,53 @@ button{
 p{
   color: white;
   font-size: 20px;
+  padding: 3px;
+  line-height: 5px;
+}
+p:hover{
+  cursor: pointer;
+}
+
+.search-input{
+  
+  background: azure;
+}
+.search-button{
+  width: 49%;
+  background: azure;
+  padding: 2px;
+  
+}
+.empty-div{
+  width: 52%
+}
+.search-container{
+  display: flex;
+  flex-direction: row;
+}
+
+
+@media (max-width: 500px) {
+  .container {
+    width: 90%;
+  }
+  button {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .search-button{
+    
+  }
+  .empty-div{
+    width: 52%;
+  }
+  
+}
+
+
+@media (max-width: 800px) {
+  .container{
+    width: 90%;
+  }
+  
 }

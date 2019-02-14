@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import Search from './components/TodoComponents/Search';
 
 
 
@@ -42,7 +43,7 @@ class App extends React.Component {
   }
 
   changeHandler = event => {
-    this.setState({ newTodo: event.target.value })
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   changeCompletedHandler = id => {
@@ -60,15 +61,16 @@ class App extends React.Component {
     })
   }
 
+  searchTodos = event => {
+    event.preventDefault();
+    this.setState({})
+  }
+
   filterCompleted = event => {
     event.preventDefault();
     this.setState({
       todos: this.state.todos.filter(todo => {
-        if(todo.completed !== 'true'){
-          return todo;
-        } else {
-          return null;
-        }
+        todo.completed !== 'true'? todo : null;
       })
     })
   }
@@ -77,6 +79,7 @@ class App extends React.Component {
     return (
     <div className="container">
         <h1>Todo List:</h1>
+        <Search />
         <TodoList 
           todos={this.state.todos} 
           changeCompletedHandler={this.changeCompletedHandler}
