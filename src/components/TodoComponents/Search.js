@@ -3,18 +3,18 @@ import React from 'react';
 
 const Search = (props) => {
   return (
-    <form onSubmit={() => {}}>
+    <form>
       <input 
         className="search-input"
         type="text"
         name="search"
-        onChange={props.changeHandler} 
+        onChange={props.search} 
         placeholder="Search" 
-        value={props.newTodo}  
+        value={props.inputSearch}  
       />
       <div className="search-container">
       <div className="empty-div"></div>
-      <button className="search-button" onClick={props.filterCompleted}>Search</button>
+      <button className="search-button" onClick={props.search}>Search</button>
       </div>
     </form>
   )

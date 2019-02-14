@@ -80,8 +80,17 @@ p:hover{
   display: flex;
   flex-direction: row;
 }
-
-
+input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+}
+ 
+button:focus{
+  outline: none;
+}
 @media (max-width: 500px) {
   .container {
     width: 90%;
